@@ -10,10 +10,13 @@ import de.bunk.usecase.UseCase;
 import rx.Observable;
 import rx.functions.Func1;
 
+import static com.fernandocejas.arrow.checks.Preconditions.checkNotNull;
+
 public class GetWeather extends UseCase {
 
     public interface Callback<Out> extends ErrorCallback {
         void onWeatherLoaded(Out out);
+
         void onWeatherError();
     }
 
@@ -21,16 +24,21 @@ public class GetWeather extends UseCase {
 
     @Inject
     public GetWeather(WeatherDataSource weatherDataSource) {
-        this.weatherDataSource = weatherDataSource;
+        this.weatherDataSource = checkNotNull(weatherDataSource);
     }
 
-    public <Out> void execute(int cityId, final AbstractTransformer<WeatherResponseData, Out> transformer, final Callback<Out> callback) {
-        Observable<Out> observable = weatherDataSource.weather(cityId).map(new Func1<WeatherResponseData, Out>() {
-            @Override
-            public Out call(WeatherResponseData weatherResponseData) {
-                return transformer.transform(weatherResponseData);
-            }
-        });
+    public <Out> void execute(int cityId, final AbstractTransformer<WeatherResponseData, Out> transformer,
+                              final Callback<Out> callback) {
+        checkNotNull(transformer);
+        checkNotNull(callback);
+
+        Observable<Out> observable = weatherDataSource.weather(cityId)
+                .map(new Func1<WeatherResponseData, Out>() {
+                    @Override
+                    public Out call(WeatherResponseData weatherResponseData) {
+                        return transformer.transform(weatherResponseData);
+                    }
+                });
 
         subscribe(observable, new DefaultSubscriber<Out>(callback, getLogger()) {
 
