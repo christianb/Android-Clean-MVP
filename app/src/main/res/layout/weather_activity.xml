@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.bunk.ui.view.BaseTextView
+        android:id="@+id/retrofit_activity_city_textview"
+        style="@style/Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        app:fontType="regular"
+        tools:text="City" />
+
+
+    <de.bunk.ui.view.BaseTextView
+        android:id="@+id/retrofit_activity_temperature_textview"
+        style="@style/Headline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        app:fontType="light"
+        tools:text="18°" />
+
+
+    <de.bunk.ui.view.BaseTextView
+        android:id="@+id/retrofit_activity_description_textview"
+        style="@style/Paragraph6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/retrofit_activity_city_textview"
+        android:layout_below="@id/retrofit_activity_city_textview"
+        android:layout_marginLeft="2dp"
+        android:layout_toLeftOf="@id/retrofit_activity_temperature_textview"
+        android:singleLine="true"
+        app:fontType="light"
+        tools:text="Neblig" />
+
+</RelativeLayout>

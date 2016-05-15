@@ -1,0 +1,92 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Paragraph1" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_paragraph1</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Paragraph2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_paragraph2</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Paragraph3" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_paragraph3</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Paragraph4" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_paragraph4</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Paragraph5" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_paragraph5</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Paragraph6" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_paragraph6</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Paragraph7" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_paragraph7</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline1" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline1</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline2</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline3" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline3</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline4" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline4</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline5" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline5</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline6" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline6</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline7" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline7</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline8" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline8</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="Headline9" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_headline9</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+</resources>

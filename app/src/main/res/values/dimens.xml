@@ -1,0 +1,21 @@
+<resources>
+    <dimen name="default_margin">16sp</dimen>
+
+    <!-- text sizes -->
+    <dimen name="text_size_paragraph1">8sp</dimen>
+    <dimen name="text_size_paragraph2">10sp</dimen>
+    <dimen name="text_size_paragraph3">11sp</dimen>
+    <dimen name="text_size_paragraph4">12sp</dimen>
+    <dimen name="text_size_paragraph5">13sp</dimen>
+    <dimen name="text_size_paragraph6">14sp</dimen>
+    <dimen name="text_size_paragraph7">15sp</dimen>
+    <dimen name="text_size_headline1">16sp</dimen>
+    <dimen name="text_size_headline2">18sp</dimen>
+    <dimen name="text_size_headline3">22sp</dimen>
+    <dimen name="text_size_headline4">28sp</dimen>
+    <dimen name="text_size_headline5">34sp</dimen>
+    <dimen name="text_size_headline6">40sp</dimen>
+    <dimen name="text_size_headline7">50sp</dimen>
+    <dimen name="text_size_headline8">70sp</dimen>
+    <dimen name="text_size_headline9">90sp</dimen>
+</resources>

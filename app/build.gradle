@@ -1,0 +1,97 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+
+    }
+
+    dependencies {
+        // Apt
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "de.bunk.mvp"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+tasks.matching { it instanceof Test }.all {
+    testLogging {
+        events "skipped", "failed"
+
+        afterSuite { desc, result ->
+            if (!desc.parent) { // will match the outermost suite
+                def output = "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+                def startItem = '|  ', endItem = '  |'
+                def repeatLength = startItem.length() + output.length() + endItem.length()
+                println('\n' + ('-' * repeatLength) + '\n' + startItem + output + endItem + '\n' + ('-' * repeatLength))
+            }
+        }
+    }
+}
+
+dependencies {
+    compile project(':domain')
+    compile 'com.android.support:design:23.2.1'
+
+    // Junit
+    testCompile 'junit:junit:4.12'
+    // Mockito
+    testCompile 'org.mockito:mockito-core:1.10.19'
+    // PowerMock
+    testCompile 'org.powermock:powermock-mockito-release-full:1.6.3'
+
+    // Espresso
+    androidTestCompile ('com.android.support.test.espresso:espresso-core:2.2.1') {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile ('com.android.support.test.espresso:espresso-intents:2.2.1') {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile ('com.android.support.test:runner:0.4.1') {
+        exclude module: 'support-annotations'
+    }
+
+    // Dagger 2
+    compile 'com.google.dagger:dagger:2.0'
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
+    testApt 'com.google.dagger:dagger-compiler:2.0.2'
+    androidTestApt 'com.google.dagger:dagger-compiler:2.0.2'
+
+    // Javax annotations
+    compile 'javax.annotation:javax.annotation-api:1.2'
+
+    // Butterknife
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    // RxJava
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+
+    // AutoValue
+    apt "com.google.auto.value:auto-value:1.2"
+    provided 'com.google.auto.value:auto-value:1.2'
+    provided 'com.ryanharter.auto.value:auto-value-gson:0.2.5'
+
+    // Arrow (subset of Guava)
+    compile 'com.fernandocejas:arrow:1.0.0'
+}

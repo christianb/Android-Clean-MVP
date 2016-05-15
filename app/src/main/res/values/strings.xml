@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVP-Example</string>
+    <string name="unknown_error">Unknown Error happened</string>
+    <string name="server_error">Error in communication with Server</string>
+</resources>
