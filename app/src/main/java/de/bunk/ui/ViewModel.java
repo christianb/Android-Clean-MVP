@@ -1,4 +1,5 @@
 package de.bunk.ui;
 
-public abstract class ViewModel {
-}
+import android.os.Parcelable;
+
+public abstract class ViewModel implements Parcelable {}
