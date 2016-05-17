@@ -38,7 +38,8 @@ dependencies {
     compile 'com.google.dagger:dagger:2.0'
     compileOnly 'com.google.dagger:dagger-compiler:2.0.2'
 
-    testCompile 'junit:junit:4.12'
+    // AssertJ
+    testCompile 'org.assertj:assertj-core:2.4.1'
 
     // Mockito
     testCompile "org.mockito:mockito-core:1.10.19"
