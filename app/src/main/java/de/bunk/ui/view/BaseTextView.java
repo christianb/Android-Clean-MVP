@@ -26,10 +26,6 @@ public class BaseTextView extends TextView {
     @Retention(RetentionPolicy.SOURCE)
     public @interface FontType { }
 
-    private static Typeface typeFaceLight;
-    private static Typeface typeFaceRegular;
-    private static Typeface typeFaceBold;
-
     @FontType
     private int fontType;
 
@@ -96,27 +92,15 @@ public class BaseTextView extends TextView {
     }
 
     public Typeface getTypeFaceLight() {
-        if (typeFaceLight == null) {
-            typeFaceLight = Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-Light.ttf");
-        }
-
-        return typeFaceLight;
+        return Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-Light.ttf");
     }
 
     protected Typeface getTypeFaceRegular() {
-        if (typeFaceRegular == null) {
-            typeFaceRegular = Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-Regular.ttf");
-        }
-
-        return typeFaceRegular;
+        return Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-Regular.ttf");
     }
 
     public Typeface getTypeFaceBold() {
-        if (typeFaceBold == null) {
-            typeFaceBold = Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-Bold.ttf");
-        }
-
-        return typeFaceBold;
+        return Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-Bold.ttf");
     }
 
     @Override
